@@ -5,15 +5,6 @@ const db = new sqlite3.Database(path.join(__dirname, "sample.db"), sqlite3.OPEN_
     if (error){
         return console.error(error);
     }
-    let sql = `
-    CREATE TABLE IF NOT EXISTS Users(
-        id TEXT PRIMARY KEY,
-        Username TEXT,
-        Emali TEXT,
-        DOB TEXT
-    );
-    `
-    db.exec(sql);
     console.log("Connected to database!");
 })
 
