@@ -1,6 +1,7 @@
-const sqlite3 = require("sqlite3");
+const sqlite3 = require("sqlite3").verbose();
+const path = require("node:path");
 
-const db = new sqlite3.Database("./src/sample.db", sqlite3.OPEN_READWRITE, (error) => {
+const db = new sqlite3.Database(path.join(__dirname, "sample.db"), sqlite3.OPEN_READWRITE, (error) => {
     if (error){
         return console.error(error);
     }
