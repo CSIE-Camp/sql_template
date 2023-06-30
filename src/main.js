@@ -8,8 +8,21 @@ const db = new sqlite3.Database(path.join(__dirname, "sample.db"), sqlite3.OPEN_
     console.log("Connected to database!");
 })
 
-let sql = `
---SQL QUERY HERE
-`
+/*
+CRUD
+CREATE
+READ
+UPDATE
+DELETE
+*/
 
-//how can we execute the sql query?
+function CallBack(Error, Results){
+    if (Error){
+        console.error(Error);
+        return;
+    }
+    console.log("Executed SQL Query successfully!");
+    if (!Results) return;
+    Results.forEach(data => console.log(data));
+}
+
