@@ -16,7 +16,14 @@ UPDATE
 DELETE
 */
 
-function CallBack(Error, Results){
+const Timmy = {
+    ID: "1234567",
+    Username: "Timmy",
+    Email: "timmy@failure.org",
+    DOB: "2005-10-28"
+}
+
+function CallbackFunc(Error, Results){
     if (Error){
         console.error(Error);
         return;
@@ -26,3 +33,4 @@ function CallBack(Error, Results){
     Results.forEach(data => console.log(data));
 }
 
+db.exec("CREATE TABLE Users (ID TEXT PRIMARY KEY)", CallbackFunc);
