@@ -33,4 +33,6 @@ function CallbackFunc(Error, Results){
     Results.forEach(data => console.log(data));
 }
 
-db.exec("CREATE TABLE Users (ID TEXT PRIMARY KEY)", CallbackFunc);
+let sql = ``
+
+db.exec(sql, CallbackFunc);
